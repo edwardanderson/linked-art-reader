@@ -1,0 +1,1585 @@
+{
+  "primaryName": "http://vocab.getty.edu/aat/300404670",
+  "languages": {
+    "en": "http://vocab.getty.edu/aat/300388277",
+    "es": "http://vocab.getty.edu/aat/300389311",
+    "fr": "http://vocab.getty.edu/aat/300388306",
+    "de": "http://vocab.getty.edu/aat/300388344",
+    "nl": "http://vocab.getty.edu/aat/300388256",
+    "it": "http://vocab.getty.edu/aat/300388474",
+    "pt": "http://vocab.getty.edu/aat/300389115",
+    "zh": "http://vocab.getty.edu/aat/300388113",
+    "ja": "http://vocab.getty.edu/aat/300388486"
+  },
+  "page": {
+    "_default": {
+      "title": {
+        "path": "_label",
+        "element": "h1"
+      },
+      "sections": [
+        "Names",
+        "Classifications",
+        "Statements",
+        "DescriptiveInformation",
+        "Addresses",
+        "Assertions",
+        "Relationships",
+        "Equivalent"
+      ]
+    },
+    "Person": {
+      "extends": "_default",
+      "sections": [
+        "LifeEvents",
+        "Names",
+        "Classifications",
+        "DescriptiveInformation",
+        "Statements",
+        "Addresses",
+        "Groups",
+        "Assertions",
+        "Relationships",
+        "Equivalent"
+      ],
+      "tag": "Person"
+    },
+    "Place": {
+      "extends": "_default",
+      "sections": [
+        "LifeEvents",
+        "Names",
+        "Classifications",
+        "Statements",
+        "Assertions",
+        "Relationships"
+      ],
+      "tag": "Place"
+    },
+    "HumanMadeObject": {
+      "extends": "_default",
+      "sections": [
+        "Viewer",
+        "Classifications",
+        "Names",
+        "Identifiers",
+        "ProductionDestruction",
+        "PhysicalCharacteristics",
+        "Aboutness",
+        "DigitalContent",
+        "Ownership",
+        "Collections",
+        "Statements",
+        "Rights",
+        "Assertions",
+        "Relationships",
+        "Equivalent"
+      ],
+      "tag": "Physical Object"
+    },
+    "VisualItem": {
+      "extends": "_default",
+      "sections": [
+        "Identifiers",
+        "Names",
+        "Classifications",
+        "Statements",
+        "Depiction",
+        "DigitalContent",
+        "VisualDescription",
+        "Creation",
+        "RelatedWorks",
+        "Rights",
+        "Equivalent"
+      ],
+      "tag": "Visual Work"
+    },
+    "Group": {
+      "extends": "_default",
+      "sections": [
+        "GroupEvents",
+        "Names",
+        "Classifications",
+        "DescriptiveInformation",
+        "Statements",
+        "Addresses",
+        "Groups",
+        "Assertions",
+        "Relationships",
+        "Equivalent"
+      ],
+      "tag": "Organisation"
+    },
+    "Set": {
+      "extends": "_default",
+      "sections": [
+        "Names",
+        "Identifiers",
+        "Classifications",
+        "Statements",
+        "SetAbout",
+        "Creation",
+        "Members",
+        "Collections",
+        "Rights",
+        "Assertions",
+        "Relationships",
+        "Equivalent"
+      ],
+      "tag": "Set"
+    }
+  },
+  "sections": {
+    "Equivalent": {
+      "title": "Equivalent",
+      "fields": [
+        {
+          "path": "equivalent",
+          "use": "EquivalentReference"
+        }
+      ]
+    },
+    "LifeEvents": {
+      "title": "Life Events",
+      "fields": [
+        {
+          "path": "born",
+          "use": "Birth"
+        },
+        {
+          "path": "died",
+          "use": "Death"
+        }
+      ]
+    },
+    "Names": {
+      "title": "Names",
+      "fields": [
+        {
+          "path": "identified_by",
+          "where": {
+            "type": "Name"
+          },
+          "use": "Name"
+        }
+      ]
+    },
+    "Addresses": {
+      "title": "Addresses",
+      "fields": [
+        {
+          "path": "contact_point",
+          "where": {
+            "type": "Identifier"
+          },
+          "use": "Address"
+        },
+        {
+          "path": "residence",
+          "label": "residence",
+          "use": "PlaceReference"
+        }
+      ]
+    },
+    "DescriptiveInformation": {
+      "title": "Descriptive Information",
+      "fields": [
+        {
+          "path": "referred_to_by",
+          "label": "biography",
+          "where": {
+            "classified_as": {
+              "id": "http://vocab.getty.edu/aat/300435422"
+            }
+          },
+          "use": "Statement"
+        },
+        {
+          "path": "classified_as",
+          "label": "nationality",
+          "where": {
+            "classified_as": {
+              "id": "http://vocab.getty.edu/aat/300379842"
+            }
+          },
+          "use": "Reference"
+        },
+        {
+          "path": "classified_as",
+          "label": "ethnicity",
+          "where": {
+            "classified_as": {
+              "id": "http://vocab.getty.edu/aat/300250435"
+            }
+          },
+          "use": "Reference"
+        },
+        {
+          "path": "classified_as",
+          "label": "gender",
+          "where": {
+            "classified_as": {
+              "id": "http://vocab.getty.edu/aat/300055147"
+            }
+          },
+          "use": "Reference"
+        },
+        {
+          "path": "classified_as",
+          "label": "occupation",
+          "where": {
+            "classified_as": {
+              "id": "http://vocab.getty.edu/aat/300263369"
+            }
+          },
+          "use": "Reference"
+        }
+      ]
+    },
+    "Identifiers": {
+      "title": "Identifiers",
+      "fields": [
+        {
+          "path": "identified_by",
+          "where": {
+            "type": "Identifier"
+          },
+          "use": "Address"
+        }
+      ]
+    },
+    "ProductionDestruction": {
+      "title": "Production and Destruction",
+      "fields": [
+        {
+          "path": "produced_by",
+          "use": "Production"
+        },
+        {
+          "path": "destroyed_by",
+          "use": "Destruction"
+        }
+      ]
+    },
+    "PhysicalCharacteristics": {
+      "title": "Physical Characteristics",
+      "fields": [
+        {
+          "path": "dimension",
+          "label": "dimensions",
+          "use": "Dimension"
+        },
+        {
+          "path": "referred_to_by",
+          "label": "dimensions statement",
+          "where": {
+            "classified_as": {
+              "id": "http://vocab.getty.edu/aat/300435430"
+            }
+          },
+          "use": "Statement"
+        },
+        {
+          "path": "made_of",
+          "label": "materials",
+          "use": "Reference"
+        },
+        {
+          "path": "referred_to_by",
+          "label": "materials statement",
+          "where": {
+            "classified_as": {
+              "id": "http://vocab.getty.edu/aat/300435429"
+            }
+          },
+          "use": "Statement"
+        },
+        {
+          "path": "part",
+          "label": "parts",
+          "use": "Reference"
+        }
+      ]
+    },
+    "Aboutness": {
+      "title": "Aboutness",
+      "fields": [
+        {
+          "path": "referred_to_by",
+          "label": "description",
+          "where": {
+            "classified_as": {
+              "id": "http://vocab.getty.edu/aat/300080091"
+            }
+          },
+          "use": "Statement"
+        },
+        {
+          "path": "shows",
+          "label": "shows visual work",
+          "use": "Reference"
+        },
+        {
+          "path": "carries",
+          "label": "carries textual work",
+          "use": "Reference"
+        }
+      ]
+    },
+    "Ownership": {
+      "title": "Ownership",
+      "fields": [
+        {
+          "path": "current_owner",
+          "label": "current owner",
+          "use": "Reference"
+        },
+        {
+          "path": "current_keeper",
+          "label": "current keeper",
+          "use": "Reference"
+        },
+        {
+          "path": "current_location",
+          "label": "current location",
+          "use": "Reference"
+        }
+      ]
+    },
+    "Rights": {
+      "title": "Rights Information",
+      "fields": [
+        {
+          "path": "referred_to_by",
+          "label": "credit line",
+          "where": {
+            "classified_as": {
+              "id": "http://vocab.getty.edu/aat/300435418"
+            }
+          },
+          "use": "Statement"
+        },
+        {
+          "path": "referred_to_by",
+          "label": "rights statement",
+          "where": {
+            "classified_as": {
+              "id": "http://vocab.getty.edu/aat/300417696"
+            }
+          },
+          "use": "Statement"
+        },
+        {
+          "path": "subject_to",
+          "label": "rights",
+          "use": "Right"
+        }
+      ]
+    },
+    "Depiction": {
+      "title": "Depiction",
+      "fields": [
+        {
+          "path": "represents",
+          "label": "depicts",
+          "use": "Reference"
+        },
+        {
+          "path": "represents_instance_of_type",
+          "label": "depicts (kind of)",
+          "use": "Reference"
+        },
+        {
+          "path": "about",
+          "label": "about",
+          "use": "Reference"
+        }
+      ]
+    },
+    "VisualDescription": {
+      "title": "Description",
+      "fields": [
+        {
+          "path": "referred_to_by",
+          "where": {
+            "classified_as": {
+              "id": "http://vocab.getty.edu/aat/300080091"
+            }
+          },
+          "use": "Statement"
+        },
+        {
+          "path": "dimension",
+          "label": "dimensions",
+          "use": "Dimension"
+        }
+      ]
+    },
+    "Creation": {
+      "title": "Creation",
+      "fields": [
+        {
+          "path": "created_by",
+          "use": "Creation"
+        },
+        {
+          "path": "used_for",
+          "label": "used for",
+          "use": "Activity"
+        }
+      ]
+    },
+    "RelatedWorks": {
+      "title": "Relationships",
+      "fields": [
+        {
+          "path": "part_of",
+          "label": "part of",
+          "use": "Reference"
+        },
+        {
+          "path": "conceptually_part_of",
+          "label": "conceptually part of",
+          "use": "Reference"
+        },
+        {
+          "path": "subject_of",
+          "label": "subject of",
+          "use": "Reference"
+        }
+      ]
+    },
+    "Classifications": {
+      "title": "Classifications",
+      "fields": [
+        {
+          "path": "classified_as",
+          "unclaimed": true,
+          "use": "Reference"
+        }
+      ]
+    },
+    "Groups": {
+      "title": "Groups",
+      "fields": [
+        {
+          "path": "member_of",
+          "use": "Reference",
+          "list": true
+        }
+      ]
+    },
+    "Assertions": {
+      "title": "Assertions",
+      "fields": [
+        {
+          "path": "attributed_by",
+          "where": {
+            "assigned": "*",
+            "assigned_property": [
+              "identified_by",
+              "referred_to_by",
+              "classified_as",
+              "equivalent"
+            ]
+          },
+          "use": "Assertion",
+          "groupBy": "assigned_property"
+        }
+      ]
+    },
+    "Relationships": {
+      "title": "Relationships",
+      "fields": [
+        {
+          "path": "attributed_by",
+          "where": {
+            "assigned": "*",
+            "not": [
+              {
+                "assigned_property": "identified_by"
+              },
+              {
+                "assigned_property": "referred_to_by"
+              },
+              {
+                "assigned_property": "classified_as"
+              },
+              {
+                "assigned_property": "equivalent"
+              }
+            ]
+          },
+          "groupBy": [
+            "classified_as",
+            "assigned_property"
+          ],
+          "groupDefault": "Other",
+          "use": "Relationship"
+        }
+      ]
+    },
+    "Collections": {
+      "title": "Collections",
+      "fields": [
+        {
+          "path": "member_of",
+          "use": "Reference",
+          "list": true
+        }
+      ]
+    },
+    "Statements": {
+      "title": "Statements",
+      "fields": [
+        {
+          "path": "referred_to_by",
+          "unclaimed": true,
+          "groupBy": "classified_as",
+          "use": "StatementText",
+          "groupIgnore": [
+            "http://vocab.getty.edu/aat/300418049"
+          ]
+        }
+      ]
+    },
+    "DigitalContent": {
+      "title": "Digital Content",
+      "fields": [
+        {
+          "path": "representation",
+          "label": "images",
+          "use": "DigitalImage"
+        },
+        {
+          "path": "digitally_shown_by",
+          "label": "images",
+          "where": {
+            "access_point": {
+              "not": {
+                "any": [
+                  {
+                    "conforms_to": "http://iiif.io/api/image"
+                  },
+                  {
+                    "conforms_to": {
+                      "id": "http://iiif.io/api/image"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "use": "DigitalImageFile"
+        },
+        {
+          "path": "representation",
+          "label": "IIIF images",
+          "where": {
+            "digitally_shown_by": {
+              "digitally_available_via": "*"
+            }
+          },
+          "use": "IIIFImage"
+        },
+        {
+          "path": "digitally_shown_by",
+          "label": "IIIF images",
+          "where": {
+            "digitally_available_via": "*"
+          },
+          "use": "IIIFService"
+        },
+        {
+          "path": "digitally_shown_by",
+          "label": "IIIF images",
+          "where": {
+            "access_point": {
+              "any": [
+                {
+                  "conforms_to": "http://iiif.io/api/image"
+                },
+                {
+                  "conforms_to": {
+                    "id": "http://iiif.io/api/image"
+                  }
+                }
+              ]
+            }
+          },
+          "use": "IIIFImageFile"
+        },
+        {
+          "path": "subject_of",
+          "label": "IIIF manifests",
+          "where": {
+            "digitally_carried_by": {
+              "conforms_to": {
+                "id": [
+                  "http://iiif.io/api/presentation/1/context.json",
+                  "http://iiif.io/api/presentation/2/context.json",
+                  "http://iiif.io/api/presentation/3/context.json"
+                ]
+              }
+            }
+          },
+          "use": "IIIFManifest"
+        },
+        {
+          "path": "subject_of",
+          "label": "Web Pages",
+          "where": {
+            "any": [
+              {
+                "classified_as": {
+                  "id": "http://vocab.getty.edu/aat/300264578"
+                }
+              },
+              {
+                "digitally_carried_by": {
+                  "classified_as": {
+                    "id": "http://vocab.getty.edu/aat/300264578"
+                  }
+                }
+              }
+            ]
+          },
+          "use": "WebPage"
+        }
+      ]
+    },
+    "GroupEvents": {
+      "title": "Formation and Dissolution",
+      "fields": [
+        {
+          "path": "formed_by",
+          "use": "Formation"
+        },
+        {
+          "path": "dissolved_by",
+          "use": "Dissolution"
+        }
+      ]
+    },
+    "Viewer": {
+      "fields": [
+        {
+          "path": "subject_of",
+          "prefer": [
+            {
+              "digitally_carried_by": {
+                "conforms_to": {
+                  "id": "http://iiif.io/api/presentation/3/context.json"
+                }
+              }
+            },
+            {
+              "digitally_carried_by": {
+                "conforms_to": {
+                  "id": "http://iiif.io/api/presentation/2/context.json"
+                }
+              }
+            },
+            {
+              "digitally_carried_by": {
+                "conforms_to": {
+                  "id": "http://iiif.io/api/presentation/1/context.json"
+                }
+              }
+            }
+          ],
+          "use": "ManifestViewer"
+        }
+      ]
+    },
+    "SetAbout": {
+      "title": "About",
+      "fields": [
+        {
+          "path": "about",
+          "use": "Reference",
+          "list": true
+        }
+      ]
+    },
+    "Members": {
+      "title": "Members",
+      "fields": [
+        {
+          "path": "members_exemplified_by",
+          "label": "exemplified by",
+          "use": "Reference",
+          "list": true
+        },
+        {
+          "path": "members_contained_by",
+          "label": "contained by",
+          "use": "Reference",
+          "list": true
+        }
+      ]
+    }
+  },
+  "shapes": {
+    "_default": {
+      "element": "div",
+      "class": "{type}",
+      "fields": [
+        {
+          "path": "_label",
+          "element": "p"
+        }
+      ]
+    },
+    "Birth": {
+      "match": {
+        "type": "Birth"
+      },
+      "element": "p",
+      "fields": [
+        {
+          "path": "timespan",
+          "before": "born in ",
+          "use": "TimeSpan"
+        },
+        {
+          "path": "took_place_at",
+          "before": " at ",
+          "use": "PlaceReference"
+        }
+      ]
+    },
+    "Death": {
+      "match": {
+        "type": "Death"
+      },
+      "element": "p",
+      "fields": [
+        {
+          "path": "timespan",
+          "before": "died in ",
+          "use": "TimeSpan"
+        },
+        {
+          "path": "took_place_at",
+          "before": " at ",
+          "use": "PlaceReference"
+        }
+      ]
+    },
+    "Name": {
+      "match": {
+        "type": "Name",
+        "fetch": false
+      },
+      "fields": [
+        {
+          "path": "content",
+          "element": ""
+        },
+        {
+          "path": "language",
+          "class": "ConceptReference",
+          "use": "Tag",
+          "list": true
+        },
+        {
+          "path": "classified_as",
+          "class": "ConceptReference",
+          "use": "Tag",
+          "list": true
+        },
+        {
+          "path": "assigned_by",
+          "use": "AssignedBy",
+          "where": {
+            "any": [
+              {
+                "carried_out_by": "*"
+              },
+              {
+                "took_place_at": "*"
+              },
+              {
+                "timespan": "*"
+              }
+            ]
+          }
+        }
+      ],
+      "element": "blockquote"
+    },
+    "TimeSpan": {
+      "match": {
+        "type": "TimeSpan"
+      },
+      "element": "span",
+      "fields": [
+        {
+          "path": "_date",
+          "element": ""
+        }
+      ]
+    },
+    "Reference": {
+      "match": {
+        "id": "*",
+        "fetch": true
+      },
+      "element": "div",
+      "fields": [
+        {
+          "path": "_label",
+          "element": "p",
+          "link": true
+        }
+      ]
+    },
+    "EquivalentReference": {
+      "extends": "Reference",
+      "element": "span",
+      "fields": [
+        {
+          "icon": true
+        },
+        {
+          "path": "_label",
+          "element": "span",
+          "link": true
+        }
+      ]
+    },
+    "PlaceReference": {
+      "extends": "Reference",
+      "match": {
+        "type": "Place"
+      },
+      "element": "span",
+      "fields": [
+        {
+          "path": "_label",
+          "element": "span",
+          "link": true
+        }
+      ]
+    },
+    "Address": {
+      "match": {
+        "type": "Identifier"
+      },
+      "fields": [
+        {
+          "path": "content",
+          "element": ""
+        },
+        {
+          "path": "classified_as",
+          "class": "ConceptReference",
+          "use": "Tag",
+          "list": true
+        },
+        {
+          "path": "assigned_by",
+          "use": "AssignedBy",
+          "where": {
+            "any": [
+              {
+                "carried_out_by": "*"
+              },
+              {
+                "took_place_at": "*"
+              },
+              {
+                "timespan": "*"
+              }
+            ]
+          }
+        }
+      ],
+      "element": "blockquote"
+    },
+    "Statement": {
+      "match": {
+        "type": "LinguisticObject"
+      },
+      "fields": [
+        {
+          "path": "content",
+          "element": ""
+        },
+        {
+          "path": "classified_as",
+          "class": "ConceptReference",
+          "use": "Tag",
+          "list": true
+        }
+      ],
+      "element": "blockquote"
+    },
+    "Production": {
+      "match": {
+        "type": "Production"
+      },
+      "element": "div",
+      "fields": [
+        {
+          "text": "produced"
+        },
+        {
+          "path": "timespan",
+          "before": " in ",
+          "use": "TimeSpan"
+        },
+        {
+          "path": "carried_out_by",
+          "before": " by ",
+          "use": "InlineReference"
+        },
+        {
+          "path": "took_place_at",
+          "before": " at ",
+          "use": "PlaceReference"
+        },
+        {
+          "path": "technique",
+          "before": " using the technique ",
+          "use": "InlineReference"
+        },
+        {
+          "path": "part",
+          "use": "ProductionPart",
+          "list": true
+        },
+        {
+          "path": "influenced_by",
+          "label": "influenced by",
+          "use": "Reference"
+        },
+        {
+          "path": "caused_by",
+          "label": "caused by",
+          "use": "Reference"
+        }
+      ]
+    },
+    "Dimension": {
+      "match": {
+        "type": "Dimension"
+      },
+      "element": "blockquote",
+      "fields": [
+        {
+          "path": "value",
+          "element": "span"
+        },
+        {
+          "path": "unit",
+          "use": "Tag"
+        },
+        {
+          "path": "classified_as",
+          "class": "ConceptReference",
+          "use": "Tag",
+          "list": true
+        },
+        {
+          "path": "assigned_by",
+          "use": "AssignedBy",
+          "where": {
+            "any": [
+              {
+                "carried_out_by": "*"
+              },
+              {
+                "took_place_at": "*"
+              },
+              {
+                "timespan": "*"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Destruction": {
+      "match": {
+        "type": "Destruction"
+      },
+      "element": "div",
+      "fields": [
+        {
+          "text": "destroyed"
+        },
+        {
+          "path": "timespan",
+          "before": " in ",
+          "use": "TimeSpan"
+        },
+        {
+          "path": "carried_out_by",
+          "before": " by ",
+          "use": "InlineReference"
+        },
+        {
+          "path": "took_place_at",
+          "before": " at ",
+          "use": "PlaceReference"
+        },
+        {
+          "path": "technique",
+          "before": " using the technique ",
+          "use": "InlineReference"
+        },
+        {
+          "path": "part",
+          "use": "ProductionPart",
+          "list": true
+        },
+        {
+          "path": "influenced_by",
+          "label": "influenced by",
+          "use": "Reference"
+        },
+        {
+          "path": "caused_by",
+          "label": "caused by",
+          "use": "Reference"
+        }
+      ]
+    },
+    "Right": {
+      "match": {
+        "type": "Right"
+      },
+      "fields": [
+        {
+          "path": "content",
+          "element": ""
+        },
+        {
+          "path": "classified_as",
+          "class": "ConceptReference",
+          "use": "Tag",
+          "list": true
+        },
+        {
+          "path": "possessed_by",
+          "label": "possessed by",
+          "use": "Reference"
+        }
+      ],
+      "element": "blockquote"
+    },
+    "Assertion": {
+      "element": "section",
+      "class": "Assertion",
+      "fields": [
+        {
+          "path": "assigned_property",
+          "element": "p",
+          "words": true
+        },
+        {
+          "path": "assigned",
+          "where": {
+            "content": "*"
+          },
+          "use": "AssertedText"
+        },
+        {
+          "path": "assigned",
+          "where": {
+            "not": {
+              "content": "*"
+            }
+          },
+          "use": "Reference"
+        },
+        {
+          "path": "carried_out_by",
+          "before": "asserted by ",
+          "use": "InlineReference"
+        },
+        {
+          "path": "took_place_at",
+          "before": " in ",
+          "use": "PlaceReference"
+        },
+        {
+          "path": "timespan",
+          "before": " in ",
+          "use": "TimeSpan"
+        }
+      ]
+    },
+    "Relationship": {
+      "element": "div",
+      "class": "Relationship",
+      "fields": [
+        {
+          "path": "identified_by",
+          "use": "RelationshipName"
+        },
+        {
+          "path": "assigned",
+          "use": "Reference",
+          "list": true
+        }
+      ]
+    },
+    "RelationshipName": {
+      "element": "p",
+      "fields": [
+        {
+          "path": "content",
+          "element": ""
+        }
+      ]
+    },
+    "Tag": {
+      "extends": "Reference",
+      "element": "span",
+      "fields": [
+        {
+          "path": "_label",
+          "element": "span",
+          "link": true
+        }
+      ]
+    },
+    "InlineReference": {
+      "extends": "Reference",
+      "element": "span",
+      "fields": [
+        {
+          "path": "_label",
+          "element": "span",
+          "link": true
+        }
+      ]
+    },
+    "ProductionPart": {
+      "element": "span",
+      "class": "Production",
+      "fields": [
+        {
+          "path": "carried_out_by",
+          "before": " by ",
+          "use": "InlineReference"
+        },
+        {
+          "path": "took_place_at",
+          "before": " at ",
+          "use": "PlaceReference"
+        },
+        {
+          "path": "technique",
+          "before": " using the technique ",
+          "use": "InlineReference"
+        }
+      ]
+    },
+    "Creation": {
+      "match": {
+        "type": "Creation"
+      },
+      "element": "div",
+      "fields": [
+        {
+          "text": "created"
+        },
+        {
+          "path": "timespan",
+          "before": " in ",
+          "use": "TimeSpan"
+        },
+        {
+          "path": "carried_out_by",
+          "before": " by ",
+          "use": "InlineReference"
+        },
+        {
+          "path": "took_place_at",
+          "before": " at ",
+          "use": "PlaceReference"
+        },
+        {
+          "path": "technique",
+          "before": " using the technique ",
+          "use": "InlineReference"
+        },
+        {
+          "path": "part",
+          "use": "ProductionPart",
+          "list": true
+        },
+        {
+          "path": "influenced_by",
+          "label": "influenced by",
+          "use": "Reference"
+        },
+        {
+          "path": "caused_by",
+          "label": "caused by",
+          "use": "Reference"
+        }
+      ]
+    },
+    "Activity": {
+      "match": {
+        "type": "Activity"
+      },
+      "element": "div",
+      "fields": [
+        {
+          "path": "classified_as",
+          "class": "ConceptReference",
+          "use": "Tag",
+          "list": true
+        },
+        {
+          "path": "timespan",
+          "before": "in ",
+          "use": "TimeSpan"
+        },
+        {
+          "path": "carried_out_by",
+          "before": " by ",
+          "use": "InlineReference"
+        },
+        {
+          "path": "took_place_at",
+          "before": " at ",
+          "use": "PlaceReference"
+        }
+      ]
+    },
+    "StatementText": {
+      "match": {
+        "type": "LinguisticObject",
+        "content": "*"
+      },
+      "element": "blockquote",
+      "fields": [
+        {
+          "path": "content",
+          "element": ""
+        },
+        {
+          "path": "language",
+          "class": "ConceptReference",
+          "use": "Tag",
+          "list": true
+        },
+        {
+          "path": "classified_as",
+          "class": "ConceptReference",
+          "use": "Tag",
+          "list": true
+        },
+        {
+          "path": "assigned_by",
+          "use": "AssignedBy",
+          "where": {
+            "any": [
+              {
+                "carried_out_by": "*"
+              },
+              {
+                "took_place_at": "*"
+              },
+              {
+                "timespan": "*"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "AssignedBy": {
+      "element": "cite",
+      "fields": [
+        {
+          "path": "carried_out_by",
+          "before": "assigned by ",
+          "use": "InlineReference"
+        },
+        {
+          "path": "took_place_at",
+          "before": " in ",
+          "use": "PlaceReference"
+        },
+        {
+          "path": "timespan",
+          "before": " in ",
+          "use": "TimeSpan"
+        }
+      ],
+      "class": "AssignedBy"
+    },
+    "AssertedText": {
+      "element": "blockquote",
+      "fields": [
+        {
+          "path": "content",
+          "element": ""
+        }
+      ]
+    },
+    "WebPage": {
+      "element": "p",
+      "class": "WebPage",
+      "fields": [
+        {
+          "path": "digitally_carried_by",
+          "use": "DigitalObject"
+        },
+        {
+          "path": "classified_as",
+          "class": "ConceptReference",
+          "use": "Tag",
+          "list": true,
+          "where": {
+            "not": {
+              "id": "http://vocab.getty.edu/aat/300264578"
+            }
+          }
+        }
+      ]
+    },
+    "AccessPoint": {
+      "element": "span",
+      "fields": [
+        {
+          "path": "id",
+          "element": "span",
+          "link": true
+        },
+        {
+          "path": "classified_as",
+          "class": "ConceptReference",
+          "use": "Tag",
+          "list": true
+        }
+      ]
+    },
+    "DigitalObject": {
+      "element": "span",
+      "fields": [
+        {
+          "path": "access_point",
+          "use": "AccessPoint",
+          "list": true
+        },
+        {
+          "path": "classified_as",
+          "class": "ConceptReference",
+          "use": "Tag",
+          "list": true,
+          "where": {
+            "not": [
+              {
+                "id": "http://vocab.getty.edu/aat/300264578"
+              },
+              {
+                "id": "http://vocab.getty.edu/aat/300215302"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "DigitalImage": {
+      "element": "p",
+      "class": "DigitalImage",
+      "fields": [
+        {
+          "path": "digitally_shown_by",
+          "use": "DigitalObject"
+        },
+        {
+          "path": "classified_as",
+          "class": "ConceptReference",
+          "use": "Tag",
+          "list": true,
+          "where": {
+            "not": {
+              "id": "http://vocab.getty.edu/aat/300215302"
+            }
+          }
+        }
+      ]
+    },
+    "Formation": {
+      "match": {
+        "type": "Formation"
+      },
+      "element": "p",
+      "fields": [
+        {
+          "path": "timespan",
+          "before": "formed in ",
+          "use": "TimeSpan"
+        },
+        {
+          "path": "took_place_at",
+          "before": " at ",
+          "use": "PlaceReference"
+        }
+      ]
+    },
+    "Dissolution": {
+      "match": {
+        "type": "Dissolution"
+      },
+      "element": "p",
+      "fields": [
+        {
+          "path": "timespan",
+          "before": "dissolved in ",
+          "use": "TimeSpan"
+        },
+        {
+          "path": "took_place_at",
+          "before": " at ",
+          "use": "PlaceReference"
+        }
+      ]
+    },
+    "IIIFManifest": {
+      "element": "p",
+      "fields": [
+        {
+          "path": "digitally_carried_by",
+          "use": "DigitalObject"
+        }
+      ]
+    },
+    "IIIFImage": {
+      "element": "p",
+      "fields": [
+        {
+          "path": "digitally_shown_by",
+          "use": "IIIFService"
+        }
+      ]
+    },
+    "IIIFService": {
+      "element": "span",
+      "fields": [
+        {
+          "path": "digitally_available_via",
+          "use": "DigitalObject",
+          "list": true
+        }
+      ]
+    },
+    "ManifestViewer": {
+      "element": "div",
+      "fields": [
+        {
+          "path": "digitally_carried_by",
+          "use": "ManifestFrame"
+        }
+      ]
+    },
+    "ManifestFrame": {
+      "element": "div",
+      "fields": [
+        {
+          "path": "access_point",
+          "use": "ManifestPoint"
+        }
+      ]
+    },
+    "ManifestPoint": {
+      "element": "div",
+      "fields": [
+        {
+          "path": "id",
+          "element": "div",
+          "class": "Viewer",
+          "embed": "https://www.universalviewer.dev/uv.html#?manifest={}"
+        }
+      ]
+    },
+    "DigitalImageFile": {
+      "element": "span",
+      "fields": [
+        {
+          "path": "access_point",
+          "use": "AccessPoint",
+          "list": true,
+          "where": {
+            "not": {
+              "any": [
+                {
+                  "conforms_to": "http://iiif.io/api/image"
+                },
+                {
+                  "conforms_to": {
+                    "id": "http://iiif.io/api/image"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "path": "classified_as",
+          "class": "ConceptReference",
+          "use": "Tag",
+          "list": true,
+          "where": {
+            "not": [
+              {
+                "id": "http://vocab.getty.edu/aat/300264578"
+              },
+              {
+                "id": "http://vocab.getty.edu/aat/300215302"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "IIIFImageFile": {
+      "element": "span",
+      "fields": [
+        {
+          "path": "access_point",
+          "use": "AccessPoint",
+          "list": true,
+          "where": {
+            "any": [
+              {
+                "conforms_to": "http://iiif.io/api/image"
+              },
+              {
+                "conforms_to": {
+                  "id": "http://iiif.io/api/image"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "classified_as",
+          "class": "ConceptReference",
+          "use": "Tag",
+          "list": true,
+          "where": {
+            "not": [
+              {
+                "id": "http://vocab.getty.edu/aat/300264578"
+              },
+              {
+                "id": "http://vocab.getty.edu/aat/300215302"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Linked Art Reader</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <style>
+    .external { font-size: .7em; vertical-align: super; line-height: 0; margin-left: -.2em; padding: .5em .8em; text-decoration: none; } /* small glyph, padded hit area */
+    section section { margin-top: var(--pico-block-spacing-vertical); }
+    .ConceptReference ul { display: flex; flex-wrap: wrap; gap: .5em; list-style: none; padding: 0; margin: .5em 0 0; }
+    .ConceptReference li, .MeasurementUnit { list-style: none; margin: 0; padding: .1em .7em; border: 1px solid var(--pico-muted-border-color); border-radius: 1em; font-size: .85em; }
+    .Layout > div > section { margin-top: 4rem; }
+    .favicon { margin-right: .4em; vertical-align: -.1em; }
+    .PageTag { padding: .1em .7em; border: 1px solid var(--pico-muted-border-color); border-radius: 1em; font-size: .85em; }
+    .MeasurementUnit { margin-left: .5em; }
+    #search:not([hidden]) { display: flex; max-width: 40rem; margin: 30vh auto 0; padding: 0 1rem; }
+    .Layout { display: grid; grid-template-columns: 13rem 1fr; gap: 2rem; align-items: start; }
+    .Layout aside { position: sticky; top: 1rem; max-height: calc(100vh - 2rem); overflow: hidden auto; }
+    .Layout aside summary { margin: 0; display: flex; align-items: center; justify-content: space-between; }
+    .Layout aside details { margin: 0; }
+    .Layout aside summary { padding-block: calc(.3rem - 1px); }
+    .Layout aside summary::after { float: none; flex: none; }
+    .Layout aside nav ul { flex-direction: column; align-items: flex-start; }
+    .Layout aside nav ul ul { margin-inline-start: 1rem; }
+    @media (max-width: 768px) { .Layout { grid-template-columns: 1fr; } .Layout aside { position: static; max-height: none; } }
+    .slot { display: contents; }
+    .DigitalObject ul, .DigitalObject li { display: inline; padding: 0; margin: 0; list-style: none; }
+  .WebPage .ConceptReference, .DigitalImage .ConceptReference, .DigitalObject .ConceptReference { display: inline-block; margin-left: .5em; }
+  .WebPage .ConceptReference ul, .DigitalImage .ConceptReference ul, .DigitalObject .ConceptReference ul { display: inline-flex; margin: 0; }
+  iframe.Viewer { width: 100%; height: 70vh; border: 0; }
+</style>
+</head>
+<body>
+  <main class="container" id="app">Loading…</main>
+  <form id="search" hidden role="group">
+    <input name="uri" type="url" placeholder="Linked Art URI" aria-label="Linked Art URI" required>
+    <button>View</button>
+  </form>
+  <script type="module" src="viewer.js"></script>
+</body>
+</html>
